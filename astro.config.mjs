@@ -9,7 +9,7 @@ import vercelStatic from "@astrojs/vercel/static";
 export default defineConfig({
   integrations: [react(), tailwind()],
   site: "https://creativetimofficial.github.io",
-  base: "/astro-launch-ui-pro/",
+  base: "/",
   image: {
     service: passthroughImageService(),
     domains: ["astro.build"],
