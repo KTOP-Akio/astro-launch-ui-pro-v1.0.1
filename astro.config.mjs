@@ -13,7 +13,5 @@ export default defineConfig({
     domains: ["astro.build"],
   },
   output: "server",
-  adapter: vercel({
-    functionPerRoute: true,
-  }),
+  adapter: vercel(),
 });
