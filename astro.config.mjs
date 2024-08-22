@@ -1,19 +1,19 @@
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-// import vercel from "@astrojs/vercel/serverless";
-import vercelStatic from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel/serverless";
 
-// const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === "production";
 
 export default defineConfig({
   integrations: [react(), tailwind()],
   site: "https://creativetimofficial.github.io",
   base: "/",
   image: {
-    service: passthroughImageService(),
     domains: ["astro.build"],
   },
-  output: 'static',
-  adapter: vercelStatic()
+  output: "server",
+  adapter: vercel({
+    functionPerRoute: true,
+  }),
 });
