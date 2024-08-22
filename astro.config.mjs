@@ -8,7 +8,7 @@ import vercel from "@astrojs/vercel/serverless"
 export default defineConfig({
   integrations: [react(), tailwind()],
   site: "https://creativetimofficial.github.io",
-  base: "/",
+  base: "/astro-launch-ui-pro/",
   image: {
     domains: ["astro.build"],
   },
